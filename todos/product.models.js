@@ -31,6 +31,11 @@ const productSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+    status: {
+      type: String,
+      enum: ["pending", "ordering", "sending"],
+      default: "pending",
+    },
   },
   { timestamps: true }
 );
